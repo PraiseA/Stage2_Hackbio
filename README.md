@@ -11,6 +11,6 @@ The data from Zenodo using wget command line
 ```
 wget https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz
 ```
-This command line is used to download all four data. 
+This command line is used to download all four data and reference genome. 
 
 ##
