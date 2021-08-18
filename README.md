@@ -19,6 +19,15 @@ FastQC was used to perform quality control on both normal and tumor tissue to ma
 ```
 fastqc datasets/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz datasets/SLGFSK-N_231335_r2_chr5_12_17.fastq.gz
 ```
+## Trimming and filtering of reads
+Trim off low quality parts of reads or poor quality reads to avoid spurious variant calls using Trimmomatic 
+```
+trimmomatic PE -threads 8 raw_data/${sample}_r1_chr5_12_17.fastq.gz raw_data/${sample}_r2_chr5_12_17.fastq.gz \
+                trimmed_reads/${sample}_r1_paired.fq.gz trimmed_reads/${sample}_R1_unpaired.fq.gz \
+                trimmed_reads/${sample}_r2_paired.fq.gz trimmed_reads/${sample}_R2_unpaired.fq.gz \
+                ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:8:keepBothReads \
+                LEADING:3 TRAILING:10 MINLEN:25
+```
 
 ## Mapping reads to the human reference genome
 
