@@ -40,6 +40,5 @@ bwa index -p *reference genome name* reference_genome.fa
 bwa mem -M -t 2 \
 *path to index reference genome* \
 *path to trimmed forward reads* *path to trimmed reverse reads* \
-2> logs/bwa.err \
-> results/bwa/(sample).sam
+> *path to save result/(sample).sam
 ```
