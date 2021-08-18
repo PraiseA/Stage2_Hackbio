@@ -43,6 +43,12 @@ bwa mem -M -t 2 \
 *path to trimmed forward reads* *path to trimmed reverse reads* \
 > *path to save result/(sample).sam
 ```
+
+## Convert sam to bam file 
+```
+samtools view -S -b /path to/sam file > /path to bam file/name of bam file
+```
+
 ## Filter mapped reads using bamtools
 ```
 bamtools filter -in input_alignment.bam -out output_alignments_filtered.bam -length 100
