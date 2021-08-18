@@ -51,10 +51,10 @@ samtools view -S -b /path to/sam file > /path to bam file/name of bam file
 
 ## Filter mapped reads using bamtools
 ```
-bamtools filter -in input_alignment.bam -out output_alignments_filtered.bam -length 100
+bamtools filter -in input_alignment.bam -out output_filtered.bam -length 100
 ```
 ## Duplicate Reads Removal
 By default, this command works on paired-end reads
 ```
-samtools rmdup <input.bam> <output.bam>
+samtools rmdup <input_filtered.bam> <output.bam>
 ```
