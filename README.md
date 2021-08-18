@@ -66,4 +66,8 @@ samtools view -bh "${input_bam}" | bamleftalign
  --max-iterations "${iterations}"
  > "${output_bam}"
  ```
- ## 
+ ## Recalibrate read map
+ ```
+ samtools calmd -bAr aln.bam > aln.baq.bam
+ ```
+## 
