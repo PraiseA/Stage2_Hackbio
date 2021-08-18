@@ -36,6 +36,7 @@ bwa index -p *reference genome name* reference_genome.fa
 ```
 
 ## Mapping reads to reference genome
+This step is done twice for both trimmed normal tissue and tumor tissue
 ```
 bwa mem -M -t 2 \
 *path to index reference genome* \
