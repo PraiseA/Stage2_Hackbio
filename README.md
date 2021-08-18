@@ -30,7 +30,16 @@ trimmomatic PE -threads 8 raw_data/${sample}_r1_chr5_12_17.fastq.gz raw_data/${s
 ```
 
 ## Mapping reads to the human reference genome
-# First step is to index the reference genome.
+### First step is to index the reference genome.
 ```
 bwa index -p *reference genome name* reference_genome.fa
+```
+
+## Mapping reads to reference genome
+```
+bwa mem -M -t 2 \
+*path to index reference genome* \
+*path to trimmed forward reads* *path to trimmed reverse reads* \
+2> logs/bwa.err \
+> results/bwa/(sample).sam
 ```
