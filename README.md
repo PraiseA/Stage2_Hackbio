@@ -58,3 +58,12 @@ By default, this command works on paired-end reads
 ```
 samtools rmdup <input_filtered.bam> <output.bam>
 ```
+## Reads are re-aligned using BamLeft-Align
+```
+samtools view -bh "${input_bam}" | bamleftalign
+--fasta-reference "${reference_fasta_filename}"
+ -c
+ --max-iterations "${iterations}"
+ > "${output_bam}"
+ ```
+ ## 
