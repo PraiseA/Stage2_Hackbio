@@ -17,7 +17,7 @@ This command line is used to download all four data and reference genome.
 FastQC was used to perform quality control on both normal and tumor tissue to make sure that the input data is of good quality, i.e., that there haven’t been any major issues during DNA preparation, exon capture, or during actual sequencing.
 
 ```
-fastqc datasets/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz datasets/SLGFSK-N_231335_r2_chr5_12_17.fastq.gz
+fastqc datasets/sample_r1_chr5_12_17.fastq.gz datasets/sample_r2_chr5_12_17.fastq.gz
 ```
 ## Trimming and filtering of reads
 Trim off low quality parts of reads or poor quality reads to avoid spurious variant calls using Trimmomatic 
@@ -30,5 +30,7 @@ trimmomatic PE -threads 8 raw_data/${sample}_r1_chr5_12_17.fastq.gz raw_data/${s
 ```
 
 ## Mapping reads to the human reference genome
-
+# First step is to index the reference genome.
+```
+bwa index -p *reference genome name* reference_genome.fa
 ```
