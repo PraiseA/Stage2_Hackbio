@@ -1,1 +1,11 @@
-The datasets used in this analysis were gotten from a real-world data from a cancer patient’s tumor and normal tissue samples. The datasets only includes reads from human chromosomes 5, 12 and 17.
+The datasets used in this analysis were gotten from a real-world data from a cancer patient’s tumor and normal tissue samples. 
+The datasets only includes reads from human chromosomes 5, 12 and 17.
+The tumor tissue and human genome couldn't be used only to identify somatic and germline variant in tumor cells. 
+This is because healthy tissue contains many thousands of variants compared to the reference genome and every individual inherits a unique pattern of many variants from their parents. 
+
+Four data/sequences were used in this analysis. Two were from normal tissue and the other were from  tumor tissue. The data are in pairs of forward and reverse reads sequence.
+The datasets were downloaded from Zenodo using the wget command and the link to the data. 
+For example, for the forward read sequence for the normal tissue, the command used to download the data to the linux environment is: 
+```
+wget https://zenodo.org/record/2582555/files/SLGFSK-N_231335_r1_chr5_12_17.fastq.gz
+```
