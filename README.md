@@ -54,9 +54,22 @@ samtools view -S -b /path to/sam file > /path to bam file/name of bam file
 bamtools filter -in input_alignment.bam -out output_filtered.bam -length 100
 ```
 ## Duplicate Reads Removal
-By default, this command works on paired-end reads
+samtools rmdup was giving errors, so decided to switch to samtools markdup to remove duplicate reads
+1. Collate the file 
 ```
-samtools rmdup <input_filtered.bam> <output.bam>
+samtools collate -o *output*.bam *input*.bam
+```
+2. ms and MC tags are added to use for markdup
+```
+samtools fixmate -m input.bam output.bam
+```
+3. Order position
+```
+samtools sort -o output.bam input.bam
+```
+4. Mark duplicates using:
+```
+samtools markdup positionsort.bam markdup.bam
 ```
 ## Reads are re-aligned using BamLeft-Align
 ```
